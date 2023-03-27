@@ -3,5 +3,6 @@
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~4",
     "azureFunctions.preDeployTask": "publish (functions)",
-    "debug.internalConsoleOptions": "neverOpen"
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "backend\\api"
 }

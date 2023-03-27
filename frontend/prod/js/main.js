@@ -362,3 +362,24 @@
     })();
 
 })(document.documentElement);
+
+window.addEventListener('DOMContentLoaded', (event) =>{
+    getVisitCount();
+})
+
+const functionApi = 'https://getresumecounteram55.azurewebsites.net/api/GetResumeCounter?code=QK-6QLyy0oYdDrmWEJJGYhW9T2A40ATtJyVY4glQbJs-AzFuGPIeYQ==';
+const localfunctionApi = 'http://localhost:7071/api/GetResumeCounter';
+
+const getVisitCount = () => {
+    let count = 30;
+    fetch(functionApi).then(response => {
+        return response.json()
+    }).then(response =>{    
+        console.log("Website called function API.");
+        count =  response.count;
+        document.getElementById("counter").innerText = count;
+    }).catch(function(error){
+        console.log(error);
+    });
+    return count;
+}
