@@ -1,0 +1,36 @@
+name: Deploy_frontend_web
+
+# Deploys the frontend folder when push
+
+on:
+    push:
+        branches: [ master ]
+        paths:
+          - "frontend/prod/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name staticsiteacctest --auth-mode key -d '$web' -s frontend/prod/
+
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "/*" --profile-name "am55cloudsite" --name "am55cloudsite"" --resource-group "test-crc"
+
+  # Azure logout
+    - name: logout
+      run: |
+            az logout
+      if: always()
