@@ -22,3 +22,17 @@
     API Time!
 
     -- Created a javascript visitor counter (main.js) and attached to the homepage.
+    -- Several issues to make it work, but in the end we managed it
+    -- Decided to changed the entire layout of the page, since my original was not working well with the counter.
+
+    ## Third Week
+
+    -- Migrated all my personal info to the new layout, not done yet.
+    -- Created the web function utilizing Azure Functions to query a changed to Cosmos DB.
+    -- Deployed all site content to a blob in Azure and utilized the static page service.
+    -- Buy my custom domain, and integrated within registered in Azure
+    -- Activated the CDN with my custom domain & endpoint, for faster response
+    -- Created a pipeline with Github Functions when a changed is detected on "frontend" folder repo.
+    
+
+
