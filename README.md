@@ -32,7 +32,16 @@
     -- Deployed all site content to a blob in Azure and utilized the static page service.
     -- Buy my custom domain, and integrated within registered in Azure
     -- Activated the CDN with my custom domain & endpoint, for faster response
-    -- Created a pipeline with Github Functions when a changed is detected on "frontend" folder repo.
+    -- Created a pipeline with Azure Functions when a changed is detected on "frontend" folder repo.
+    -- Added a automated test in the Get Counter function and inserted in the workflow "backend".
+
+
+    ## Improving points ##
+
+    -- Pass all infra to Bicep Templates and deploy to prod subscription
+    -- Create a separated workflow for .pdf resume updates been uploaded automatically to the site
+    -- Create the same pipelines on GitHub actions to Azure DevOps.
+
     
 
 
