@@ -3411,7 +3411,7 @@ img.u-pull-left {
     object-fit     : cover;
     margin         : 0;
     vertical-align : bottom;
-    border-radius  : 50%;
+    border-radius  : 65%;
 }
 
 .about-info__text {
