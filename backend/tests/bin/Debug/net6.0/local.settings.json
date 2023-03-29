@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AzResumeConnectionString":"AccountEndpoint=https://cloudchallengecosmosdb-dev55.documents.azure.com:443/;AccountKey=tXNJqdTswikOBO5SViGVtZbbr5DkTyM0SGvrZO1YGi4z3s93om5SXM2lJFCM9k3ChjZNnxDb1Q0AACDbfCeYKw==;"
+
+  },
+  "Host":
+  {
+    "CORS": "*"
+  }
+}
