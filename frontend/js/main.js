@@ -367,6 +367,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     getVisitCount();
 })
 
+// Azure Function Counter API *
 const functionApi = 'https://getresumecounteram55.azurewebsites.net/api/GetResumeCounter?code=QK-6QLyy0oYdDrmWEJJGYhW9T2A40ATtJyVY4glQbJs-AzFuGPIeYQ==';
 const localfunctionApi = 'http://localhost:7071/api/GetResumeCounter';
 
