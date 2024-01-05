@@ -10,9 +10,6 @@ param storageAccountName string = 'stor${uniqueString(resourceGroup().id)}'
 
 @allowed([
   'Standard_LRS'
-  'Standard_GRS'
-  'Standard_ZRS'
-  'Premium_LRS'
 ])
 @description('The storage account sku name.')
 param storageSku string = 'Standard_LRS'
@@ -20,21 +17,14 @@ param storageSku string = 'Standard_LRS'
 @description('The path to the web index document.')
 param indexDocumentPath string = 'index.html'
 
-@description('The contents of the web index document.')
-param indexDocumentContents string = '<h1>Example static website</h1>'
-
-@description('The path to the web error document.')
-param errorDocument404Path string = 'error.html'
-
-@description('The contents of the web error document.')
-param errorDocument404Contents string = '<h1>Example 404 error page</h1>'
-
+// Creating Contributor role for STG
 resource contributorRoleDefinition 'Microsoft.Authorization/roleDefinitions@2018-01-01-preview' existing = {
   scope: subscription()
   // This is the Storage Account Contributor role, which is the minimum role permission we can give. See https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#:~:text=17d1049b-9a84-46fb-8f53-869881c3d3ab
   name: '17d1049b-9a84-46fb-8f53-869881c3d3ab'
 }
 
+// Creating Storage Account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: storageAccountName
   location: location
@@ -44,6 +34,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   }
 }
 
+// Managed Identity for PS script Run
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
   name: 'DeploymentScript'
   location: location
@@ -90,18 +81,7 @@ resource deploymentScript 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
         name: 'IndexDocumentPath'
         value: indexDocumentPath
       }
-      {
-        name: 'IndexDocumentContents'
-        value: indexDocumentContents
-      }
-      {
-        name: 'ErrorDocument404Path'
-        value: errorDocument404Path
-      }
-      {
-        name: 'ErrorDocument404Contents'
-        value: errorDocument404Contents
-      }
+      
     ]
   }
 }
