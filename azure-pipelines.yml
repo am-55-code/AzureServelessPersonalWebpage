@@ -1,0 +1,36 @@
+trigger:
+  branches:
+    include:
+      - master  # Change this to your main branch name
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
+  displayName: 'Copy Files'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    artifactName: 'website'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifact'
+
+- task: CopyFiles@2
+  inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)/backend/infra'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
+  displayName: 'Copy Files'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    artifactName: 'iac-infra'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifact'
