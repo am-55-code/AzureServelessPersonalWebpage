@@ -1,5 +1,5 @@
 @description('Specifies the name of the Azure Storage account.')
-param storageAccountName string
+param storageAccountName string = 'stg${uniqueString(resourceGroup().name)}'
 
 @description('Specifies the name of the blob container.')
 param containerName string = '$web'
