@@ -1,5 +1,5 @@
-$storageAccount = Get-AzStorageAccount -ResourceGroupName $env:ResourceGroupName -AccountName $env:StorageAccountName
+$storageAccount = Get-AzStorageAccount -ResourceGroupName $ResourceGroupName
 
 # Enable the static website feature on the storage account.
 $ctx = $storageAccount.Context
-Enable-AzStorageStaticWebsite -Context $ctx -IndexDocument $env:IndexDocumentPath
+Enable-AzStorageStaticWebsite -Context $ctx -IndexDocument $Index
