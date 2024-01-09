@@ -1,5 +1,5 @@
 @description('Specifies the name of the Azure Storage account.')
-param storageAccountName string = 'stg${uniqueString(resourceGroup().name)}'
+param storageAccountName string = 'dev-am55-build-${uniqueString(resourceGroup().id)}'
 
 @description('Specifies the name of the blob container.')
 param containerName string = '$web'
@@ -24,3 +24,6 @@ resource StorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
   name: '${StorageAccount.name}/default/${containerName}'
 }
+
+
+output storageaccount string = StorageAccount.name
