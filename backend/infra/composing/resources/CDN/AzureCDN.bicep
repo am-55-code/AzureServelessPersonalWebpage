@@ -9,15 +9,8 @@ resource StorageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing 
   name: 'dev-am55-build-${uniqueString(resourceGroup().id)}'  
 }
 
-resource cdnProfile 'Microsoft.Cdn/profiles@2021-06-01' = {
+resource cdnProfile 'Microsoft.Cdn/profiles@2021-06-01' existing  = {
   name: profileName
-  location: location
-  tags: {
-    displayName: profileName
-  }
-  sku: {
-    name: 'Standard_Microsoft'
-  }
 }
 
 resource endpoint 'Microsoft.Cdn/profiles/endpoints@2021-06-01' = {
@@ -42,7 +35,7 @@ resource endpoint 'Microsoft.Cdn/profiles/endpoints@2021-06-01' = {
     isCompressionEnabled: true
     origins: [
       {
-        name: 'origin1'
+        name: 'origin'
         properties: {
           hostName: storageAccountHostName
         }
