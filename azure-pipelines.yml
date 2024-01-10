@@ -2,7 +2,10 @@ trigger:
   branches:
     include:
       - master  # Change this to your main branch name
-
+  paths:
+    include: 
+      - frontend/*   
+      
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -12,25 +15,25 @@ steps:
     SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
-  displayName: 'Copy Files'
+  displayName: 'Copy Files from Frontend folder'
 
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
     artifactName: 'website'
     publishLocation: 'Container'
-  displayName: 'Publish Artifact'
+  displayName: 'Publish Artifact from frontend'
 
 - task: CopyFiles@2
   inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)/backend/infra'
       Contents: '**'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
-  displayName: 'Copy Files'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/dist/infra'
+  displayName: 'Copy Files from infra folder'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist/infra'
     artifactName: 'iac-infra'
     publishLocation: 'Container'
-  displayName: 'Publish Artifact'
+  displayName: 'Publish Artifact from infra'
