@@ -2,8 +2,8 @@
 param location string = resourceGroup().location
 param profileName string =  'am55cloudsite'
 
-var endpointName = 'endpoint-${uniqueString(resourceGroup().id)}'
-var storageAccountHostName = replace(replace(StorageAccount.properties.primaryEndpoints.blob, 'https://', ''), '/', '')
+var endpointName = 'dev-web-endpoint'
+var storageAccountHostName = replace(replace(StorageAccount.properties.primaryEndpoints.web, 'https://', ''), '/', '')
 
 resource StorageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing = {
   name: 'devwebbuild${uniqueString(resourceGroup().id)}'  
