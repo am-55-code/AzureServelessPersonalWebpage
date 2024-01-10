@@ -6,7 +6,7 @@ var endpointName = 'endpoint-${uniqueString(resourceGroup().id)}'
 var storageAccountHostName = replace(replace(StorageAccount.properties.primaryEndpoints.blob, 'https://', ''), '/', '')
 
 resource StorageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing = {
-  name: 'dev-am55-build-${uniqueString(resourceGroup().id)}'  
+  name: 'devwebbuild${uniqueString(resourceGroup().id)}'  
 }
 
 resource cdnProfile 'Microsoft.Cdn/profiles@2021-06-01' existing  = {
