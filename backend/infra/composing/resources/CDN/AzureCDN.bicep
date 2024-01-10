@@ -46,4 +46,4 @@ resource endpoint 'Microsoft.Cdn/profiles/endpoints@2021-06-01' = {
 
 output hostName string = endpoint.properties.hostName
 output originHostHeader string = endpoint.properties.originHostHeader
-output storageAccountHostName string = StorageAccount.properties.primaryEndpoints.blob
+output storageAccountHostName string = StorageAccount.properties.primaryEndpoints.web
