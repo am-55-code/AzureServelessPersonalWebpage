@@ -1,0 +1,23 @@
+trigger:
+  paths:
+    include:
+      - frontend/cv
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/cv'
+    Contents: '.pdf'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
+  displayName: 'Copy Files from CV folder'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    artifactName: 'Curriculum'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifact from CV folder'
+
