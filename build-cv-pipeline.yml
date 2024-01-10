@@ -11,13 +11,13 @@ steps:
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)/frontend/cv'
     Contents: '.pdf'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copy Files from CV folder'
   
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
-    artifactName: 'curriculum'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'cv'
     publishLocation: 'Container'
   displayName: 'Publish Artifact from CV folder'
 
