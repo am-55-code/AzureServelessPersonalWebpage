@@ -24,6 +24,6 @@ resource StorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
   name: '${StorageAccount.name}/default/${containerName}'
 }
+  
 
-
-output storageaccount string = StorageAccount.name
+output storageaccount object  = StorageAccount.properties.primaryEndpoints
