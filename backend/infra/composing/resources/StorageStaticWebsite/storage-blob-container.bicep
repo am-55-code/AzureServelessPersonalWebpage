@@ -8,7 +8,7 @@ param containerName string = '$web'
 param location string = resourceGroup().location
 
 // Creating a Storage Account
-resource StorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+resource DevStorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: storageAccountName
   location: location
   sku: {
@@ -21,9 +21,9 @@ resource StorageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 }
 
 // Creating a container with the name $web
-resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
-  name: '${StorageAccount.name}/default/${containerName}'
+resource DevContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
+  name: '${storageAccountName}/default/${containerName}'
 }
   
 
-output storageaccount object  = StorageAccount.properties.primaryEndpoints
+output storageaccount object  = DevStorageAccount.properties.primaryEndpoints
