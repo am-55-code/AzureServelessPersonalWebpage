@@ -1,5 +1,23 @@
-# Cloud Resume Challenge
-    My own resume and future landing page about myself, using Azure Services.
+# Personal Website Azure Serverless
+[![Build Status](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_apis/build/status%2FBuild%20CV%20Artifact?branchName=master)](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_build/latest?definitionId=21&branchName=master)  ![Board Status](https://dev.azure.com/am55/f6afe483-c7f3-4cc4-b527-5a0fcac82c01/721abf1c-c98b-49bd-9b78-a12b3dfb840d/_apis/work/boardbadge/54f8307a-40e5-41a1-a0cb-682439adae04)
+    
+## About the Project
+    
+    This repo have all resources and code created to feature my own resume and landing page about myself, using Azure Services.
+
+    Inspired by the Cloud Challenge book.
+
+    Conceived since the begining as the lowest cost first and as fun sandbox to test my knowledge about Azure Services and resources.
+
+### Services and Technologies used
+
+* ``CSS`` ``HTML`` ``JavaScript`` ``C#`` ``.NET``
+* ``Bicep`` ``PowerShell`` ``Shell``
+* ``Azure Blob Storage``
+* ``Azure Functions``
+* ``CosmosDB``
+* ``Azure CDN``
+* ``Azure Pipelines & Boards``
 
 
     ## First Week
