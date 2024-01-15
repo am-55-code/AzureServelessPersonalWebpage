@@ -1,5 +1,5 @@
 # Personal Website Azure Serverless
-[![Build Status](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_apis/build/status%2FBuild%20CV%20Artifact?branchName=master&jobName=Job)](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_build/latest?definitionId=21&branchName=master) [![Board Status](https://dev.azure.com/am55/f6afe483-c7f3-4cc4-b527-5a0fcac82c01/721abf1c-c98b-49bd-9b78-a12b3dfb840d/_apis/work/boardbadge/54f8307a-40e5-41a1-a0cb-682439adae04?columnOptions=1)](https://dev.azure.com/am55/f6afe483-c7f3-4cc4-b527-5a0fcac82c01/_boards/board/t/721abf1c-c98b-49bd-9b78-a12b3dfb840d/Issues/)
+[![Build Status](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_apis/build/status%2FBuild%20CV%20Artifact?branchName=master)](https://dev.azure.com/am55/AM55%20Portfolio%20Website/_build/latest?definitionId=21&branchName=master) [![Board Status](https://dev.azure.com/am55/f6afe483-c7f3-4cc4-b527-5a0fcac82c01/721abf1c-c98b-49bd-9b78-a12b3dfb840d/_apis/work/boardbadge/54f8307a-40e5-41a1-a0cb-682439adae04?columnOptions=1)](https://dev.azure.com/am55/f6afe483-c7f3-4cc4-b527-5a0fcac82c01/_boards/board/t/721abf1c-c98b-49bd-9b78-a12b3dfb840d/Issues/)
     
 ## About the Project
 
