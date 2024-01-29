@@ -9,4 +9,4 @@ container=$(az storage container list --account-name $name --query "[0].name" --
 echo $container
 
 # Overwriting web files to Static Website
-az storage blob upload-batch --account-name $name --auth-mode key --destination $container --source ./_Web Build Pipeline/website --overwrite
+az storage blob upload-batch --account-name $name --auth-mode key --destination $container --source ./ --overwrite
