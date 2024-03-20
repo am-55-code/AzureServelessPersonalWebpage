@@ -38,8 +38,8 @@ Conceived since the begining as the lowest cost first and as fun sandbox to test
 <!-- ROADMAP -->
 ## Roadmap
 - [ ] Add a Project section
-- [  ] Add a F1 calendar and cool trivia section
-- [  ] Add Nasa Picture of the Day Section
+- [ ] Add a F1 calendar and cool trivia section
+- [ ] Add Nasa Picture of the Day Section
     
 ## Acknowledgments
 - [Cloud Resume Challenge Book by Forrest Brazeal](https://cloudresumechallenge.dev/book/)
